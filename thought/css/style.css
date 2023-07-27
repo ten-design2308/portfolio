@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/* かたまり共通 */
+.section {
+    position: relative;
+}
+h2 {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    z-index: -1;
+}
+h3 {
+    font-size: 24px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    line-height: 1.75;
+    padding-top: 40px;
+    padding-bottom: 17px;
+    border-bottom: 2px dotted #a2d7dd;
+    margin-bottom: 17px;
+}
+.heading {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    height: 100%;
+    z-index: -1;
+}
+.pc_sticky {
+    position: sticky;
+    top: 140px;
+}
+.sp_un_sticky {
+    display: none;
+}
+.br_pc_none {
+    display: none;
+}
+
+/* 制作への想い */
+/* .top {
+    height: 450px;
+    padding-top: 80px;
+    margin: 180px auto 0;
+    font-size: 24px;
+    line-height: 2;
+    letter-spacing: 0.1em;
+} */
+.thought_wrap {
+    text-align: justify;
+    max-width: 1000px;
+    padding: 0 15%;
+    margin: 200px auto 160px;
+}
+.thought_right {
+    text-align: justify;
+    width: 57%;
+    margin-left: 43%;
+}
+.thought_left {
+    width: 55%;
+}
+.thought_right + .thought_left,
+.thought_left + .thought_right {
+    margin-top: 150px;
+}
+.thought_work {
+    font-size: 15px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+/* ロゴマーク */
+
+.logo_wrap {
+    max-width: 730px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 300px auto 160px;
+}
+.logo_img {
+    width: 240px;
+    padding-top: 80px;
+    margin: 0 auto 100px;
+}
+.logo_desc_mean {
+    margin-bottom: 160px;
+}
+.logo_desc_symbol {
+    display: flex;
+    justify-content: space-between;
+}
+.logo_desc_symbol_desc {
+    padding-right: 30px;
+}
+.logo_desc_symbol_img {
+    flex-shrink: 0;
+    width: 75px;
+}
+.logo_desc_symbol_img_te {
+    padding-bottom: 30px;
+}
+.thought_logo {
+    font-size: 15px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    /* かたまり共通 */
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+        padding-top: 80px;
+        padding-bottom: 17px;
+        margin-bottom: 17px;
+    }
+    .br_pc_none {
+        display: none;
+    }
+    /* .top {
+        height: 352px;
+        padding-top: 40px;
+        margin: 150px auto 0;
+        font-size: 20px;
+    } */
+
+    /* 制作への想い */
+    .thought_wrap {
+        margin: 130px auto 0;
+    }
+    .thought_right,
+    .thought_left {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .thought_right + .thought_left,
+    .thought_left + .thought_right {
+        margin-top: 0;
+    }
+    .thought_work {
+        margin-bottom: 0;
+    }
+
+    /* ロゴについて */
+    .logo_wrap {
+        margin: 130px auto 100px;
+        padding: 0 15%;
+    }
+    .logo_img {
+        width: 210px;
+        padding-top: 80px;
+        margin: 0 auto;
+    }
+    .logo_desc_mean {
+        margin-bottom: 0;
+    }
+    .logo_desc_symbol {
+        display: block;
+    }
+    .logo_desc_symbol_desc {
+        padding-right: 0;
+    }
+    .logo_desc_symbol_img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .logo_desc_symbol_img_te {
+        padding-right: 30px;
+    }
+    .logo_desc_symbol_img_te,
+    .logo_desc_symbol_img_n {
+        width: 75px;
+    }
+    .thought_logo {
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 452px) {
+    .pc_sticky {
+        display: none;
+    }
+    .sp_un_sticky {
+        display: block;
+        margin: 0 auto;
+    }
+    h3 {
+        padding-top: 60px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .thought_wrap,
+    .logo_wrap {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}

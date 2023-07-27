@@ -1,0 +1,88 @@
+@charset "UTF-8";
+h2 {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    z-index: -1;
+}
+.heading {
+    position: absolute;
+    top: 180px;
+    left: 6%;
+    z-index: -1;
+}
+.about_wrap {
+    max-width: 1000px;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 300px auto;
+}
+.name {
+    font-size: 25px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+}
+.name_en::before {
+    content: "Yori";
+    padding-left: 20px;
+    font-size: 15px;
+    color: #969696;
+}
+.about_desc_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 72px;
+}
+.abuot_desc {
+    font-size: 15px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.1em;
+    line-height: 2;
+    padding-right: 10px;
+    margin-bottom: 25px;
+}
+.about_achieve {
+    font-size: 14px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    color: #969696;
+    margin-bottom: 25px;
+}
+.about_skill_icon {
+    width: 50%;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 25px;
+    }
+    .about_desc_wrap {
+        display: block;
+    }
+    .about_achieve {
+        font-size: 13px;
+    }
+    .about_skill_icon {
+        width: 50%;
+    }
+    .about_skill_icon {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 452px) {
+    .heading {
+        position: static;
+        margin: 130px auto 80px;
+    }
+    .about_wrap {
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 0;
+        margin-bottom: 150px;
+    }
+    .about_skill_icon {
+        width: 100%;
+    }
+}

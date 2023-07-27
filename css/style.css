@@ -1,0 +1,354 @@
+@charset "UTF-8";
+
+/* 共通 */
+h2 {
+    font-size: 30px;
+    margin: 0 auto 130px;
+}
+h3 {
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.5;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+}
+.next {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    margin-bottom: 300px;
+}
+
+/*== 波紋がふわっと広がる */
+
+.btn_hover {
+    /*波紋の基点とするためrelativeを指定*/
+    position: relative;
+    /*リンクの形状*/
+    display: block;
+    width: fit-content;
+    margin: 0 auto 300px;
+    text-decoration: none;
+    color: #165e83;
+    outline: none;
+}
+
+/*波形の設定*/
+.btn_hover:hover::before {
+    content: "";
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    /*波形の形状*/
+    border: 3px solid #a2d7dd;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+    opacity: 1;
+    /*アニメーションの設定*/
+    animation: 1s circleanime2 forwards;
+}
+
+/*波形が広がるアニメーション*/
+@keyframes circleanime2 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/*矢印の設定*/
+.btn_hover::after {
+    content: "";
+    /*絶対配置で矢印の位置を決める*/
+    position: absolute;
+    top: 4px;
+    right: -20px;
+    /*矢印の形状*/
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #165e83;
+    border-right: 1px solid #165e83;
+    transform: rotate(45deg);
+}
+
+/* 想いの書き出し */
+/* .section_thought {
+    position: relative;
+} */
+.home_back01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+}
+.home_back01 img {
+    object-fit: cover;
+    width: 100%;
+    height: 445px;
+    object-position: 100% 100%;
+}
+
+.top {
+    height: 500px;
+    font-size: 30px;
+    margin: 130px auto 200px;
+}
+
+.home_back02 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.home_back02 img {
+    object-fit: cover;
+    width: 100%;
+    height: 610px;
+}
+
+.intro {
+    text-align: center;
+    width: fit-content;
+    font-size: 27px;
+    font-feature-settings: "palt";
+    line-height: 2;
+    letter-spacing: 0.1em;
+    margin: 0 auto 70px;
+    position: relative;
+}
+.intro::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #a2d7dd;
+    position: absolute;
+    top: -40px;
+    left: -75px;
+    z-index: -1;
+}
+.intro_sub {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 2.5;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+}
+
+/* 制作と活動 */
+.works_wrap_01 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.works_wrap_02 {
+    width: 32%;
+}
+.works_feature_01 {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    margin-bottom: 20px;
+}
+.works_feature_02 {
+    text-align: center;
+    font-size: 14px;
+    font-feature-settings: "palt";
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+}
+/* スライダー */
+.slick-dotted.slick-slider {
+    margin: 0 auto 150px;
+    max-width: 1000px;
+}
+.slick-initialized .slick-slide {
+    margin: 15px 15px 20px;
+}
+.slick-dots li {
+    margin: 0;
+}
+.slick-dots li button:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0.25;
+    background-color: #165e83;
+}
+
+.works_list_img {
+    /* ホバー用 */
+    position: relative;
+}
+/* workのホバー */
+.works_list_img span.works_img_hover {
+    position: relative; /*背景色の基点となる位置を定義*/
+    display: block;
+    line-height: 0; /*行の高さを0にする*/
+    overflow: hidden; /*拡大してはみ出る要素を隠す*/
+}
+.works_list_img span.works_img_hover::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    opacity: 0; /*透過0*/
+    transition: 0.3s ease-in-out; /*移り変わる速さを変更したい場合はこの数値を変更*/
+    transform: translateY(100%);
+    background: #fff; /*背景色*/
+    width: 100%;
+    height: 100%;
+}
+.works_list_img:hover span.works_img_hover::before {
+    /*hoverした時の変化*/
+    opacity: 0.9; /*透過なしに変化*/
+    transform: translateY(0);
+}
+.works_list_img span.works_hover_cap {
+    position: absolute;
+    opacity: 0; /*透過0*/
+    transition: 0.5s ease-in-out; /*移り変わる速さを変更したい場合はこの数値を変更*/
+    z-index: 3; /*テキストを前面に出す*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*テキストの位置中央指定*/
+    font-size: 14px;
+    text-align: center;
+    color: #165e83; /*テキストの色を変えたい場合はここを修正*/
+    line-height: 1.5; /*行の高さを1.5にする*/
+}
+.works_list_img:hover span.works_hover_cap {
+    opacity: 1; /*透過なしに変化*/
+}
+
+/* ロゴについて */
+.logo_img {
+    margin: auto;
+    display: block;
+    width: 210px;
+    margin-bottom: 50px;
+}
+.logo_sub {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin-bottom: 100px;
+}
+
+/* お問い合わせ */
+.contact_sub {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin-bottom: 100px;
+}
+.br_pc_none {
+    display: none;
+}
+
+/* サンクスページ */
+h2 {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    z-index: -1;
+}
+.heading {
+    position: fixed;
+    top: 180px;
+    left: 6%;
+    z-index: -1;
+}
+.thanks_p {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin: 300px auto 100px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 767px) {
+    /* 共通 */
+    h2 {
+        font-size: 25px;
+        margin-bottom: 80px;
+    }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .btn_hover {
+        margin: 0 auto 150px;
+    }
+
+    /* 想いの書き出し */
+    .top {
+        height: 402px;
+        font-size: 25px;
+        margin: 150px auto;
+    }
+    .home_back02 {
+        top: 34%;
+    }
+    .intro {
+        font-size: 20px;
+        margin-bottom: 70px;
+    }
+    .intro::before {
+        width: 80px;
+        height: 80px;
+        left: -25px;
+    }
+    .works_feature_01 {
+        margin-bottom: 15px;
+    }
+    .works_feature_02 {
+        line-height: 1.75;
+        margin-bottom: 80px;
+    }
+
+    /* 制作と活動 */
+    .works_wrap_01 {
+        display: block;
+    }
+    .works_wrap_02 {
+        width: 100%;
+    }
+    /* スライダー */
+    .slick-initialized .slick-slide {
+        margin: 20px;
+    }
+
+    /* ロゴについて */
+    .logo_img {
+        width: 180px;
+        margin-bottom: 40px;
+    }
+    .logo_sub {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .br_pc_none {
+        display: block;
+    }
+}

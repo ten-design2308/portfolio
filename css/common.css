@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
+
+/* cssリセット */
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #3c3c3c;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: normal;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* ホバー */
+/* a:hover {
+    opacity: 0.5;
+} */
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* 基本の背景色 */
+body {
+    background-color: #fffff5;
+}
+
+footer {
+    background: linear-gradient(#a2d7dd, #165e83);
+}
+/* 基本の縦書き */
+.vertical {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+}
+/* 文字色の装飾01 */
+.color_01 {
+    color: #a2d7dd;
+}
+
+/* cssリセット ここまで*/
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    /* background: rgba(255, 255, 240, 0.9); */
+    width: 100%;
+    /* height:  */
+    z-index: 99;
+}
+.header_logo {
+    width: 100px;
+    margin-top: 45px;
+    margin-left: 45px;
+}
+/* ハンバーガー */
+.nav_wrap {
+    display: none;
+}
+
+.nav_btn {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #a2d7dd;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.nav_btn_line span {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.nav_btn_line span::before,
+.nav_btn_line span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    border-radius: 3px;
+    background: #fff;
+    transition: 0.5s;
+}
+.nav_btn_line span::before {
+    bottom: 5px;
+}
+.nav_btn_line span::after {
+    top: 5px;
+}
+
+/* ハンバーガーメニュー閉じる */
+.nav_btn.open {
+    background: transparent;
+    transition: 0.5s;
+}
+.nav_btn_line.open span {
+    background: transparent;
+}
+.nav_btn_line.open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+.nav_btn_line.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+/* ハンバーガーメニュー中身 */
+.nav_wrap {
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #a2d7dd;
+    /* 半透明も良いかなと悩んでいるので下記残しておきます */
+    /* background: rgba(162, 215, 221, 0.9); */
+    z-index: 1;
+}
+.nav_wrap_center {
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.nav_wrap_list ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+.nav_wrap_list ul li {
+    color: #fff;
+    font-size: 23px;
+    font-feature-settings: "palt";
+}
+.nav_wrap_list ul li + li {
+    margin-top: 45px;
+}
+.nav_wrap_list ul li a:hover {
+    opacity: 0.7;
+}
+.nav_wrap_sns {
+    text-align: center;
+    margin-top: 80px;
+}
+.nav_wrap_sns img {
+    width: 30px;
+}
+
+/* フッター */
+.footer_wrap {
+    padding: 4%;
+}
+.footer_nav {
+    display: flex;
+    justify-content: space-around;
+    max-width: 650px;
+    margin: 40px auto;
+}
+.footer_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+.footer_nav ul li {
+    color: #fff;
+}
+.footer_nav ul li a:hover {
+    opacity: 0.5;
+}
+.footer_insta {
+    display: flex;
+    width: fit-content;
+    /* margin: 50px auto 0; */
+}
+.footer_insta_img {
+    width: 30px;
+    padding-left: 30px;
+    flex-shrink: 0;
+}
+.footer_insta_img > a > img {
+    width: 100%;
+}
+.footer_logo {
+    display: block;
+    margin: 90px auto 0;
+    width: 200px;
+}
+.cls-1 {
+    fill: #fff;
+}
+/* .footer_logo_svg {
+    width: 200px;
+    fill: #fff;
+} */
+/* .footer_logo.cls-1 {
+    fill: #fff;
+} */
+.copyright {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: #fffff5;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    /* ヘッダー */
+    .header_logo {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .nav_btn {
+        top: 20px;
+        right: 20px;
+    }
+    .nav_wrap_list ul li {
+        font-size: 20px;
+    }
+
+    /* フッター */
+    .footer_wrap {
+        padding: 10%;
+    }
+    .footer_nav {
+        display: block;
+    }
+    .footer_list {
+        display: block;
+        width: fit-content;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+    .footer_nav ul li {
+        margin-top: 35px;
+    }
+    .footer_insta_img {
+        padding-left: 0;
+    }
+    .footer_logo {
+        width: 150px;
+    }
+}
